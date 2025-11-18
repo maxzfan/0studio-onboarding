@@ -33,31 +33,41 @@ def create_voice_clone(creator):
         raise FileNotFoundError(f"Sample file not found: {file_path}")
 
     files = {
-        "voice_samples": (
+        "voices": (
             os.path.basename(file_path),
             open(file_path, "rb"),
             "audio/mpeg",
         ),
     }
     payload = {
-        "visibility": "unlist",
         "type": "tts",
         "title": creator["title"],
         "description": creator["description"],
         "train_mode": "fast",
-        "enhance_audio_quality": "false",
+        "visibility": "unlist",
+        "enhance_audio_quality": False,
     }
-    print("Payload (sans file):", {k: v for k, v in payload.items() if k != "texts"})
+    # Tags as separate form fields (multipart arrays)
+    if creator.get("tags"):
+        payload["tags"] = creator["tags"].split(",")
+    print("Payload (sans file):", payload)
     try:
         response = requests.post(
             API_URL, data=payload, files=files, headers=HEADERS, timeout=60
         )
         print(f"API response status: {response.status_code}")
         print("Raw response text:", response.text)
+        
+        # Try to parse JSON regardless of status code
+        try:
+            json_data = response.json()
+            print(f"{creator['title']} response JSON:", json_data)
+        except ValueError:
+            print("No JSON in response")
+        
         response.raise_for_status()
-        print(f"{creator['title']} clone result:", response.json())
     finally:
-        files["voice_samples"][1].close()
+        files["voices"][1].close()
 
 if not FISH_API_KEY:
     raise EnvironmentError("FISH_API_KEY is not set; cannot authenticate with Fish Audio.")
