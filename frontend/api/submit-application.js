@@ -93,7 +93,7 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Adari Applications <applications@adari.app>',
+        from: 'Adari Applications <onboarding@resend.dev>',
         to: ['cik@mit.edu', 'colinikkim@gmail.com'],
         subject: emailSubject,
         text: emailBody,
@@ -138,7 +138,14 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }
 
     if (!response.ok) {
       console.error('[API] Resend API error:', data);
-      return res.status(response.status).json({ error: 'Failed to send email', details: data });
+      console.error('[API] Response status:', response.status);
+      console.error('[API] Response statusText:', response.statusText);
+      return res.status(response.status).json({ 
+        error: 'Failed to send email', 
+        details: data,
+        status: response.status,
+        message: data.message || 'Unknown error from Resend API'
+      });
     }
 
     console.log('[API] Email sent successfully:', data.id);
