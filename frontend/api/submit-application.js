@@ -15,13 +15,21 @@ export default async function handler(req, res) {
   try {
     const { name, email, birthday, instagram, tiktok, vibes, otherVibe, videoFileName } = req.body;
 
+    console.log('[API] Received application:', { name, email, birthday, instagram, tiktok, vibes, otherVibe, videoFileName });
+
+    // Validate required fields
+    if (!name || !email || !birthday) {
+      console.error('[API] Missing required fields');
+      return res.status(400).json({ error: 'Missing required fields: name, email, birthday' });
+    }
+
     // Format the vibes list
-    const vibesList = vibes.map(vibe => {
+    const vibesList = vibes && vibes.length > 0 ? vibes.map(vibe => {
       if (vibe === 'other' && otherVibe) {
         return `Other: ${otherVibe}`;
       }
       return vibe;
-    }).join(', ');
+    }).join(', ') : 'None selected';
 
     // Format social media links
     const socialMedia = [];
@@ -52,12 +60,32 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }
 
     // Send email using Resend API
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
+    const IS_LOCAL = process.env.NODE_ENV !== 'production';
     
     if (!RESEND_API_KEY) {
-      console.error('RESEND_API_KEY not configured');
-      return res.status(500).json({ error: 'Email service not configured' });
+      console.error('[API] RESEND_API_KEY not configured');
+      
+      // In local development, just log the email instead of failing
+      if (IS_LOCAL) {
+        console.log('\n========== EMAIL PREVIEW (LOCAL MODE) ==========');
+        console.log('From: Adari Applications <applications@adari.app>');
+        console.log('To: cik@mit.edu, colinikkim@gmail.com');
+        console.log('Subject:', emailSubject);
+        console.log('\n--- Email Body ---');
+        console.log(emailBody);
+        console.log('=================================================\n');
+        
+        return res.status(200).json({ 
+          success: true, 
+          message: 'Local mode: Email logged to console',
+          emailPreview: emailBody 
+        });
+      }
+      
+      return res.status(500).json({ error: 'Email service not configured - RESEND_API_KEY missing' });
     }
 
+    console.log('[API] Sending email via Resend...');
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -109,14 +137,15 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }
     const data = await response.json();
 
     if (!response.ok) {
-      console.error('Resend API error:', data);
+      console.error('[API] Resend API error:', data);
       return res.status(response.status).json({ error: 'Failed to send email', details: data });
     }
 
+    console.log('[API] Email sent successfully:', data.id);
     return res.status(200).json({ success: true, emailId: data.id });
   } catch (error) {
-    console.error('Error sending email:', error);
-    return res.status(500).json({ error: 'Internal server error', message: error.message });
+    console.error('[API] Error sending email:', error);
+    return res.status(500).json({ error: 'Internal server error', message: error.message, stack: error.stack });
   }
 }
 

@@ -10,4 +10,20 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5173',
+        changeOrigin: true,
+        configure: (proxy, options) => {
+          proxy.on('error', (err, req, res) => {
+            console.log('[Vite Proxy] Error:', err);
+          });
+          proxy.on('proxyReq', (proxyReq, req, res) => {
+            console.log('[Vite Proxy] Request:', req.method, req.url);
+          });
+        }
+      }
+    }
+  }
 })

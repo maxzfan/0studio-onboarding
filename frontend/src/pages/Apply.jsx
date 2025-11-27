@@ -105,25 +105,11 @@ export default function Apply() {
         videoFileName: videoPrompt ? videoPrompt.name : null
       };
 
-      // Check if we're in development mode
-      const isDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-      
-      if (isDev) {
-        // In development, just log the data and simulate success
-        console.log('=== FORM SUBMISSION (DEV MODE) ===');
-        console.log('This would be emailed to: cik@mit.edu, rhahami@gmail.com, maxfan070601@gmail.com');
-        console.log('Form Data:', formData);
-        console.log('====================================');
-        
-        // Simulate API delay
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        // Move to thank you page
-        setStep(7);
-        return;
-      }
+      console.log('=== SUBMITTING APPLICATION ===');
+      console.log('Form Data:', formData);
 
-      // Production: send to API
+      // Send to API (works in both dev and production)
+      console.log('Sending to:', '/api/submit-application');
       const response = await fetch('/api/submit-application', {
         method: 'POST',
         headers: {
@@ -132,11 +118,16 @@ export default function Apply() {
         body: JSON.stringify(formData),
       });
 
+      console.log('Response status:', response.status);
+
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
         console.error('Submission error:', errorData);
-        throw new Error('Failed to submit application');
+        throw new Error(errorData.error || 'Failed to submit application');
       }
+
+      const result = await response.json();
+      console.log('✓ Submission successful:', result);
 
       // Move to thank you page
       setStep(7);
