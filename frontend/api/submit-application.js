@@ -94,7 +94,7 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }
       },
       body: JSON.stringify({
         from: 'Adari Applications <onboarding@resend.dev>',
-        to: ['cik@mit.edu', 'colinikkim@gmail.com'],
+        to: ['cik@mit.edu'],
         subject: emailSubject,
         text: emailBody,
         html: `
