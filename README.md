@@ -1,8 +1,8 @@
 # Adari
 
-This repository includes all code for the frontend as well.
-
 UGC Content Generation Pipeline
+
+This repository contains both frontend (web application) and backend (Python tools) for creating UGC style advertisements.
 
 A comprehensive toolkit for creating User Generated Content (UGC) style advertisements, from script generation to video production with AI-powered voices and effects.
 
@@ -31,6 +31,7 @@ pip install google-generativeai python-dotenv
 
 **Usage:**
 ```bash
+cd backend
 python3 script_generator.py
 ```
 
@@ -71,6 +72,7 @@ pip install requests
 
 **Usage:**
 ```bash
+cd backend
 python3 voice_clone.py
 ```
 
@@ -106,6 +108,8 @@ brew install ffmpeg  # macOS
 
 **Usage:**
 ```bash
+cd backend
+
 # Single file
 python3 mp4_mp3_converter.py video.mp4 192k
 
@@ -139,6 +143,8 @@ pip install requests
 
 **Usage:**
 ```bash
+cd backend
+
 # Basic generation
 python3 dop_api.py 'https://example.com/image.jpg' 'Camera zooming in' output.mp4
 
@@ -167,6 +173,7 @@ video_path = generator.generate_and_download(
 
 ### Step 1: Generate Script
 ```bash
+cd backend
 # Edit script_generator.py to set your brand
 python3 script_generator.py
 # Output: generated_scripts/Brand_Name_ad_script_timestamp.txt
@@ -174,18 +181,21 @@ python3 script_generator.py
 
 ### Step 2: Extract Audio (if needed)
 ```bash
+cd backend
 # Convert creator video to audio
 python3 mp4_mp3_converter.py creator_video.mp4
 ```
 
 ### Step 3: Clone Voice
 ```bash
+cd backend
 # Create voice model from audio sample
 python3 voice_clone.py
 ```
 
 ### Step 4: Generate Video
 ```bash
+cd backend
 # Create animated video from static image
 python3 dop_api.py 'product_image.jpg' 'Camera slowly zooming in on product' final_video.mp4
 ```
@@ -196,15 +206,26 @@ python3 dop_api.py 'product_image.jpg' 'Camera slowly zooming in on product' fin
 
 ```
 Adari/
-├── script_generator.py      # AI script generation
-├── voice_clone.py           # Voice cloning with Fish Audio
-├── mp4_mp3_converter.py     # Audio extraction from video
-├── dop_api.py              # Video generation with DoP
-├── requirements.txt         # Python dependencies
-├── .env                    # Environment variables (create this)
-├── creator-videos/         # Audio/video samples
-├── generated_scripts/      # Generated ad scripts
-└── output/                 # Generated videos
+├── frontend/                    # React web application
+│   ├── src/                    # React components and pages
+│   ├── api/                    # Serverless API functions
+│   ├── public/                 # Static assets
+│   ├── dist/                   # Build output
+│   ├── vercel.json            # Vercel deployment config
+│   └── package.json           # Frontend dependencies
+├── backend/                    # Python tools
+│   ├── script_generator.py    # AI script generation
+│   ├── voice_clone.py         # Voice cloning with Fish Audio
+│   ├── mp4_mp3_converter.py   # Audio extraction from video
+│   ├── dop_api.py            # Video generation with DoP
+│   ├── stitch.py             # Video stitching/overlay
+│   ├── requirements.txt       # Python dependencies
+│   ├── .env                  # Environment variables (create this)
+│   ├── creator-videos/       # Audio/video samples
+│   ├── generated_scripts/    # Generated ad scripts
+│   └── output/               # Generated videos
+├── vercel.json               # Root Vercel config
+└── README.md                 # This file
 ```
 
 ---
@@ -217,6 +238,7 @@ Adari/
 
 ### Python Packages
 ```bash
+cd backend
 pip install -r requirements.txt
 ```
 
