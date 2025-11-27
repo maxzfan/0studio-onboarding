@@ -1,4 +1,7 @@
 # Adari
+
+This repository includes all code for the frontend as well.
+
 UGC Content Generation Pipeline
 
 A comprehensive toolkit for creating User Generated Content (UGC) style advertisements, from script generation to video production with AI-powered voices and effects.
