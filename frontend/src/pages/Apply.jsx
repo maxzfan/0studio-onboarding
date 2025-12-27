@@ -477,7 +477,7 @@ export default function Apply() {
         {step === 6 && (
           <>
             <h1 className="text-white text-2xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
-              would you be down to setup a 15 minute call with us?
+              do you agree to set up a 15 minute onboarding call with us? we'll show you how to use 0studio.
             </h1>
             
             <div className="flex flex-col items-center min-h-[60px] justify-start">
@@ -491,7 +491,7 @@ export default function Apply() {
                 </button>
                 
                 <div className="flex flex-col gap-3 min-w-[400px] items-center justify-center">
-                  {['yes', 'no'].map((option) => (
+                  {['yes'].map((option) => (
                     <label key={option} className="flex items-center gap-3 cursor-pointer group">
                       <div className="relative flex items-center">
                         <input

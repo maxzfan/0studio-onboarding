@@ -37,7 +37,7 @@ export default function Creator() {
           className="text-white text-sm font-light tracking-wide hover:opacity-70 transition-opacity"
           style={{ fontFamily: 'InputMono', fontWeight: 400 }}
         >
-          join the waitlist
+          try it out
         </a>
         <a 
           href="/thesis"

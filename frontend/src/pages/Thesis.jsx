@@ -17,16 +17,17 @@ export default function Thesis() {
           className="text-white text-base leading-relaxed font-light tracking-wide space-y-6 text-justify"
           style={{ fontFamily: 'InputMono', fontWeight: 400 }}
         >
+
+        <p>
+            in architecture school, the first thing we learned was that ideation comes from iteration. 
+            we don't think file management should get in the way of that.
+          </p>
+
           <p>
             architecture is an inherently iterative process, yet the industry still works by passing files around. 
             every design decision creates copies. 
             manual saves, email with huge attachments, broken downstream work. 
             a new idea should be your greatest asset, but instead it often feels like a burden.
-          </p>
-          
-          <p>
-            in architecture school, the first thing we learned was that ideation comes from iteration. 
-            we don't think file management should get in the way of that.
           </p>
           
           <p>
@@ -38,7 +39,7 @@ export default function Thesis() {
           </p>
           
           <p>
-            if your project files have names like _final_final_v7 or you're running out of email attachment storage, <a href="/apply" className="underline hover:opacity-70 transition-opacity">join our waitlist</a>.
+            if your project files have names like _final_final_v7 or you're running out of email attachment storage, <a href="/apply" className="underline hover:opacity-70 transition-opacity">give 0studio a try</a>.
           </p>
 
           <p>
