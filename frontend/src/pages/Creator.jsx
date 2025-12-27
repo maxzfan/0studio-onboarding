@@ -1,81 +1,45 @@
-import { ThreeDPhotoCarousel } from "../components/3d-carousel"
-import Steps from "../components/Steps"
-import EarningsCalc from "../components/EarningsCalc"
-import SocialProof, { useCreatorsCount } from "../components/SocialProof"
-import { NumberTicker } from "../components/ui/number-ticker"
-import { useEffect } from "react"
-import { renderCanvas } from "../components/ui/canvas"
+import CubeAnimation from "../components/ui/ascii-cube"
 
 export default function Creator() {
-  const creators = useCreatorsCount();
-  
-  useEffect(() => {
-    renderCanvas();
-  }, []);
-  
-  const scrollToHowItWorks = () => {
-    document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
-    <div className="h-screen overflow-y-scroll snap-y snap-mandatory relative bg-black">
-      <canvas
-        className="pointer-events-none fixed inset-0 z-0"
-        id="canvas"
-      ></canvas>
-      
-      {/* Hero Section */}
-      <section className="h-screen w-full flex flex-col items-center justify-center bg-transparent select-none snap-start relative z-10" style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always' }}>
-        <div className="absolute top-10 flex flex-col items-center">
-          <a href="/">
-            <h1 className="text-white text-6xl font-light tracking-tight cursor-pointer hover:opacity-80 transition-opacity" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>adari</h1>
-          </a>
-          <p className="text-white text-sm font-light tracking-wide mt-2 opacity-70" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>you could be here.</p>
-        </div>
-        <div className="w-full max-w-4xl px-4">
-          <div className="min-h-[500px] flex flex-col justify-center">
-            <div className="p-2">
-              <ThreeDPhotoCarousel />
-            </div>
-          </div>
-        </div>
-        <button 
-          onClick={scrollToHowItWorks}
-          className="absolute bottom-12 text-white text-lg font-light tracking-wide hover:opacity-70 transition-opacity"
-          style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
+    <div className="min-h-screen w-full bg-black flex flex-col items-center justify-center relative overflow-hidden">
+      {/* Header */}
+      <div className="absolute top-10 left-1/2 transform -translate-x-1/2 z-30 flex flex-col items-center">
+        <a href="/">
+          <h1 
+            className="text-white text-6xl font-light tracking-tight cursor-pointer hover:opacity-80 transition-opacity" 
+            style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
+          >
+            adari
+          </h1>
+        </a>
+        <p 
+          className="text-white text-sm font-light tracking-wide mt-2 opacity-70" 
+          style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
         >
-          how it works
-        </button>
-      </section>
-
-      {/* How It Works Section */}
-      <section id="how-it-works" className="h-screen w-full flex flex-col items-center justify-center bg-transparent select-none snap-start px-8 py-8 relative z-10 overflow-hidden" style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always' }}>
-        <div className="max-w-6xl w-full h-full flex flex-col justify-center space-y-12">
-          <Steps />
-          <EarningsCalc />
-          
-          {/* Join Now Button */}
-          <div className="w-full flex flex-col items-center gap-4">
-            <a 
-              href="/apply"
-              className="text-white text-xl font-light tracking-wide px-12 py-4 border border-white/30 rounded-full hover:bg-white/10 transition-all"
-              style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
-            >
-              join <NumberTicker value={creators} className="text-white" /> creators now
-            </a>
-            
-            <p className="text-white/70 text-base font-light text-center" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
-              we'll make sure you're happy with what we make.<br />
-              any questions? <a 
-                href="mailto:cik@mit.edu" 
-                className="text-white hover:text-white/90 underline"
-              >
-                chat with us
-              </a>.
-            </p>
-          </div>
-        </div>
-      </section>
+          you could be here.
+        </p>
+      </div>
+      
+      {/* ASCII Cube - centered */}
+      <div className="text-white scale-75 md:scale-90 lg:scale-100">
+        <CubeAnimation 
+          wireframe={true}
+          edges={true}
+          speedA={0.02}
+          speedB={0.015}
+          axis="xy"
+        />
+      </div>
+      
+      {/* How it works link */}
+      <a 
+        href="/apply"
+        className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-30 text-white text-lg font-light tracking-wide hover:opacity-70 transition-opacity"
+        style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
+      >
+        how it works
+      </a>
     </div>
   )
 }

@@ -98,7 +98,7 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }
         subject: emailSubject,
         text: emailBody,
         html: `
-          <div style="font-family: 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <div style="font-family: 'Geist Sans', sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
             <h1 style="color: #000; font-weight: 300; font-size: 24px; margin-bottom: 30px;">New Creator Application Received</h1>
             
             <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 20px;">

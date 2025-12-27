@@ -167,7 +167,7 @@ export default function Apply() {
       <div className="flex flex-col items-center gap-12 z-10">
         {step === 0 && (
           <>
-            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
               we're excited to have you join the adari family!
             </h1>
             
@@ -175,7 +175,7 @@ export default function Apply() {
               <button 
                 onClick={handleNext}
                 className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
+                style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
               >
                 &gt;
               </button>
@@ -185,7 +185,7 @@ export default function Apply() {
 
         {step === 1 && (
           <>
-            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
               what is your name?
             </h1>
             
@@ -194,13 +194,13 @@ export default function Apply() {
                 <button 
                   onClick={handleBack}
                   className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                  style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
                 >
                   &lt;
                 </button>
                 
                 <div className="flex items-center gap-2">
-                  <span className="text-white text-xl font-light" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>[</span>
+                  <span className="text-white text-xl font-light" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>[</span>
                   <input
                     type="text"
                     value={name}
@@ -209,17 +209,17 @@ export default function Apply() {
                       setErrors({ ...errors, name: false });
                     }}
                     className="bg-transparent border-none text-white text-xl font-light tracking-wide text-center focus:outline-none min-w-[400px]"
-                    style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
+                    style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
                     placeholder="your name"
                     autoFocus
                   />
-                  <span className="text-white text-xl font-light" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>]</span>
+                  <span className="text-white text-xl font-light" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>]</span>
                 </div>
                 
                 <button 
                   onClick={handleNext}
                   className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                  style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
                 >
                   &gt;
                 </button>
@@ -227,7 +227,7 @@ export default function Apply() {
               
               <div className="h-6 mt-2">
                 {errors.name && (
-                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
                     please enter your name
                   </p>
                 )}
@@ -238,7 +238,7 @@ export default function Apply() {
 
         {step === 2 && (
           <>
-            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
               what is your email address?
             </h1>
             
@@ -247,13 +247,13 @@ export default function Apply() {
                 <button 
                   onClick={handleBack}
                   className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                  style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
                 >
                   &lt;
                 </button>
                 
                 <div className="flex items-center gap-2">
-                  <span className="text-white text-xl font-light" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>[</span>
+                  <span className="text-white text-xl font-light" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>[</span>
                   <input
                     type="email"
                     value={email}
@@ -262,17 +262,17 @@ export default function Apply() {
                       setErrors({ ...errors, email: false });
                     }}
                     className="bg-transparent border-none text-white text-xl font-light tracking-wide text-center focus:outline-none min-w-[400px]"
-                    style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
+                    style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
                     placeholder="your email"
                     autoFocus
                   />
-                  <span className="text-white text-xl font-light" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>]</span>
+                  <span className="text-white text-xl font-light" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>]</span>
                 </div>
                 
                 <button 
                   onClick={handleNext}
                   className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                  style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
                 >
                   &gt;
                 </button>
@@ -280,12 +280,12 @@ export default function Apply() {
               
               <div className="h-6 mt-2">
                 {errors.email === 'empty' && (
-                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
                     please enter your email address
                   </p>
                 )}
                 {errors.email === 'invalid' && (
-                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
                     please enter a valid email address
                   </p>
                 )}
@@ -296,7 +296,7 @@ export default function Apply() {
 
         {step === 3 && (
           <>
-            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
               what is your birthday?
             </h1>
             
@@ -305,13 +305,13 @@ export default function Apply() {
                 <button 
                   onClick={handleBack}
                   className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                  style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
                 >
                   &lt;
                 </button>
                 
                 <div className="flex items-center gap-2">
-                  <span className="text-white text-xl font-light" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>[</span>
+                  <span className="text-white text-xl font-light" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>[</span>
                   <div className="flex items-center justify-center min-w-[400px]">
                     <input
                       type="date"
@@ -322,20 +322,20 @@ export default function Apply() {
                       }}
                       className="bg-transparent border-none text-white text-xl font-light tracking-wide focus:outline-none"
                       style={{ 
-                        fontFamily: 'Segoe UI, sans-serif', 
+                        fontFamily: 'Geist Sans, sans-serif', 
                         fontWeight: 300,
                         colorScheme: 'dark'
                       }}
                       autoFocus
                     />
                   </div>
-                  <span className="text-white text-xl font-light" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>]</span>
+                  <span className="text-white text-xl font-light" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>]</span>
                 </div>
                 
                 <button 
                   onClick={handleNext}
                   className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                  style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
                 >
                   &gt;
                 </button>
@@ -343,12 +343,12 @@ export default function Apply() {
               
               <div className="h-6 mt-2">
                 {errors.birthday === 'empty' && (
-                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
                     please enter your birthday
                   </p>
                 )}
                 {errors.birthday === 'underage' && (
-                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
                     you must be at least 18 years of age to apply to adari
                   </p>
                 )}
@@ -359,7 +359,7 @@ export default function Apply() {
 
         {step === 4 && (
           <>
-            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
               what are your social media links?
             </h1>
             
@@ -368,14 +368,14 @@ export default function Apply() {
                 <button 
                   onClick={handleBack}
                   className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                  style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
                 >
                   &lt;
                 </button>
                 
                 <div className="flex flex-col gap-3">
                   <div className="flex items-center gap-2">
-                    <span className="text-white text-xl font-light" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>[</span>
+                    <span className="text-white text-xl font-light" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>[</span>
                     <input
                       type="text"
                       value={instagram}
@@ -384,15 +384,15 @@ export default function Apply() {
                         setErrors({ ...errors, socialMedia: false });
                       }}
                       className="bg-transparent border-none text-white text-xl font-light tracking-wide text-center focus:outline-none min-w-[400px]"
-                      style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
+                      style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
                       placeholder="instagram"
                       autoFocus
                     />
-                    <span className="text-white text-xl font-light" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>]</span>
+                    <span className="text-white text-xl font-light" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>]</span>
                   </div>
                   
                   <div className="flex items-center gap-2">
-                    <span className="text-white text-xl font-light" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>[</span>
+                    <span className="text-white text-xl font-light" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>[</span>
                     <input
                       type="text"
                       value={tiktok}
@@ -401,17 +401,17 @@ export default function Apply() {
                         setErrors({ ...errors, socialMedia: false });
                       }}
                       className="bg-transparent border-none text-white text-xl font-light tracking-wide text-center focus:outline-none min-w-[400px]"
-                      style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
+                      style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
                       placeholder="tiktok"
                     />
-                    <span className="text-white text-xl font-light" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>]</span>
+                    <span className="text-white text-xl font-light" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>]</span>
                   </div>
                 </div>
                 
                 <button 
                   onClick={handleNext}
                   className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                  style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
                 >
                   &gt;
                 </button>
@@ -419,7 +419,7 @@ export default function Apply() {
               
               <div className="h-6 mt-2">
                 {errors.socialMedia && (
-                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
                     please enter at least one social media link
                   </p>
                 )}
@@ -430,7 +430,7 @@ export default function Apply() {
 
         {step === 5 && (
           <>
-            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
               what is your vibe? select all that apply.
             </h1>
             
@@ -439,7 +439,7 @@ export default function Apply() {
                 <button 
                   onClick={handleBack}
                   className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                  style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
                 >
                   &lt;
                 </button>
@@ -471,7 +471,7 @@ export default function Apply() {
                           </svg>
                         )}
                       </div>
-                      <span className="text-white text-lg font-light tracking-wide group-hover:opacity-70 transition-opacity" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+                      <span className="text-white text-lg font-light tracking-wide group-hover:opacity-70 transition-opacity" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
                         {option}
                       </span>
                     </label>
@@ -516,13 +516,13 @@ export default function Apply() {
                           setErrors({ ...errors, vibe: false });
                         }}
                         className="bg-transparent border-none text-white text-lg font-light tracking-wide focus:outline-none"
-                        style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
+                        style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
                         placeholder="please specify"
                         autoFocus
                         onClick={(e) => e.stopPropagation()}
                       />
                     ) : (
-                      <span className="text-white text-lg font-light tracking-wide group-hover:opacity-70 transition-opacity" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+                      <span className="text-white text-lg font-light tracking-wide group-hover:opacity-70 transition-opacity" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
                         other
                       </span>
                     )}
@@ -532,7 +532,7 @@ export default function Apply() {
                 <button 
                   onClick={handleNext}
                   className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                  style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
                 >
                   &gt;
                 </button>
@@ -540,7 +540,7 @@ export default function Apply() {
               
               <div className="h-6 mt-2">
                 {errors.vibe === true && (
-                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
                     please select at least one category
                   </p>
                 )}
@@ -551,25 +551,25 @@ export default function Apply() {
 
         {step === 6 && (
           <>
-            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
               answer in a video: you just woke up with $100 million in your bank account and never have to work again...
             </h1>
             
             <div className="flex flex-col items-center gap-12 min-h-[60px] justify-start">
               <div className="flex flex-col items-center gap-4 text-center">
                 <div className="flex flex-col items-center gap-2">
-                  <p className="text-white/80 text-lg font-light tracking-wide" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+                  <p className="text-white/80 text-lg font-light tracking-wide" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
                     what would you do everyday?
                   </p>
-                  <p className="text-white/80 text-lg font-light tracking-wide" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+                  <p className="text-white/80 text-lg font-light tracking-wide" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
                     how would you spend your time (and the money)?
                   </p>
-                  <p className="text-white/80 text-lg font-light tracking-wide" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+                  <p className="text-white/80 text-lg font-light tracking-wide" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
                     paint the picture — where are you, who's with you, what's your vibe?
                   </p>
                 </div>
                 
-                <p className="text-white/40 text-sm font-light tracking-wide text-center max-w-xl" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+                <p className="text-white/40 text-sm font-light tracking-wide text-center max-w-xl" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
                   use good lighting, keep your camera still, and film vertical.
                   <br />
                   please keep videos under 1 minute long.
@@ -581,13 +581,13 @@ export default function Apply() {
                   <button 
                     onClick={handleBack}
                     className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                    style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
+                    style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
                   >
                     &lt;
                   </button>
                   
                   <div className="flex items-center gap-2">
-                    <span className="text-white text-xl font-light" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>[</span>
+                    <span className="text-white text-xl font-light" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>[</span>
                     <label className="cursor-pointer">
                       <input
                         type="file"
@@ -598,18 +598,18 @@ export default function Apply() {
                         }}
                         className="hidden"
                       />
-                      <span className="text-white text-xl font-light tracking-wide text-center min-w-[400px] inline-block" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+                      <span className="text-white text-xl font-light tracking-wide text-center min-w-[400px] inline-block" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
                         {videoPrompt ? videoPrompt.name : 'upload video'}
                       </span>
                     </label>
-                    <span className="text-white text-xl font-light" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>]</span>
+                    <span className="text-white text-xl font-light" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>]</span>
                   </div>
                   
                   <button 
                     onClick={handleNext}
                     disabled={isSubmitting}
                     className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
-                    style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
+                    style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
                   >
                     {isSubmitting ? '...' : '>'}
                   </button>
@@ -617,17 +617,17 @@ export default function Apply() {
                 
                 <div className="h-6 mt-2">
                   {errors.videoPrompt && (
-                    <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+                    <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
                       please upload your video
                     </p>
                   )}
                   {submitError && (
-                    <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+                    <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
                       error submitting application. please try again.
                     </p>
                   )}
                   {isSubmitting && (
-                    <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+                    <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
                       submitting your application...
                     </p>
                   )}
@@ -639,19 +639,19 @@ export default function Apply() {
 
         {step === 7 && (
           <>
-            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
               thanks for applying!
             </h1>
             
             <div className="flex flex-col items-center gap-6">
-              <p className="text-white/80 text-lg font-light tracking-wide text-center max-w-2xl" style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}>
+              <p className="text-white/80 text-lg font-light tracking-wide text-center max-w-2xl" style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}>
                 within 48 hours, you'll receive an email from us with the details of your contract/thank-you bonus. we do not have permission to use your likeness yet. we hope to see you soon!
               </p>
               
               <a 
                 href="/creator"
                 className="text-white text-xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                style={{ fontFamily: 'Segoe UI, sans-serif', fontWeight: 300 }}
+                style={{ fontFamily: 'Geist Sans, sans-serif', fontWeight: 300 }}
               >
                 go back
               </a>
