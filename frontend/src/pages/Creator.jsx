@@ -30,14 +30,23 @@ export default function Creator() {
         />
       </div>
       
-      {/* waitlist link */}
-      <a 
-        href="/apply"
-        className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-30 text-white text-sm font-light tracking-wide hover:opacity-70 transition-opacity"
-        style={{ fontFamily: 'InputMono', fontWeight: 400 }}
-      >
-        join the waitlist
-      </a>
+      {/* waitlist and thesis links */}
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-30 flex flex-col items-center space-y-4">
+        <a 
+          href="/apply"
+          className="text-white text-sm font-light tracking-wide hover:opacity-70 transition-opacity"
+          style={{ fontFamily: 'InputMono', fontWeight: 400 }}
+        >
+          join the waitlist
+        </a>
+        <a 
+          href="/thesis"
+          className="text-white text-sm font-light tracking-wide hover:opacity-70 transition-opacity"
+          style={{ fontFamily: 'InputMono', fontWeight: 400 }}
+        >
+          about us
+        </a>
+      </div>
     </div>
   )
 }
