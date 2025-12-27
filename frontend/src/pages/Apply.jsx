@@ -1,5 +1,11 @@
 import { useEffect, useState } from 'react'
 import { renderCanvas } from '../components/ui/canvas'
+import emailjs from '@emailjs/browser'
+
+// EmailJS Configuration - Replace these with your actual values from emailjs.com
+const EMAILJS_SERVICE_ID = 'service_80nvv2p'
+const EMAILJS_TEMPLATE_ID = 'template_gcivxum'
+const EMAILJS_PUBLIC_KEY = 'X-Pss5H1jq-OsZq5h'
 
 export default function Apply() {
   const [step, setStep] = useState(0);
@@ -76,46 +82,45 @@ export default function Apply() {
     setSubmitError(false);
 
     try {
-      const formData = {
-        name,
-        email,
-        age,
-        schoolStatus,
-        usageType,
-        callInterest
+      // Prepare template parameters for EmailJS
+      const templateParams = {
+        from_name: name,
+        user_name: name,
+        user_email: email,
+        user_age: age,
+        user_school_status: schoolStatus,
+        user_usage_type: usageType.join(', '),
+        user_call_interest: callInterest,
+        submitted_at: new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })
       };
 
-      console.log('=== SUBMITTING APPLICATION ===');
-      console.log('Form Data:', formData);
+      console.log('%c=== SUBMITTING APPLICATION VIA EMAILJS ===', 'background: #222; color: #bada55; font-size: 16px; padding: 4px;');
+      console.log('%cTemplate Parameters:', 'color: #00bcd4; font-weight: bold;', templateParams);
 
-      // Send to API (works in both dev and production)
-      console.log('Sending to:', '/api/submit-application');
-      const response = await fetch('/api/submit-application', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
 
-      console.log('Response status:', response.status);
-
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        console.error('Submission error:', errorData);
-        throw new Error(errorData.error || 'Failed to submit application');
-      }
-
-      const result = await response.json();
-      console.log('✓ Submission successful:', result);
+      console.log('%c✓ EmailJS Response:', 'color: #4caf50; font-weight: bold;', result);
+      console.log('  - Status:', result.status);
+      console.log('  - Text:', result.text);
 
       // Move to thank you page
-      setStep(6);
+      setStep(7);
     } catch (error) {
-      console.error('Error submitting application:', error);
+      console.error('%c❌ Error submitting application:', 'color: #f44336; font-size: 14px; font-weight: bold;');
+      console.error('  - Name:', error.name);
+      console.error('  - Message:', error.message);
+      console.error('  - Text:', error.text);
+      console.error('  - Status:', error.status);
       setSubmitError(true);
     } finally {
       setIsSubmitting(false);
+      console.log('%c=== SUBMISSION COMPLETE ===', 'background: #222; color: #bada55; font-size: 16px; padding: 4px;');
     }
   };
 
@@ -135,7 +140,7 @@ export default function Apply() {
   useEffect(() => {
     window.addEventListener('keypress', handleKeyPress);
     return () => window.removeEventListener('keypress', handleKeyPress);
-  }, [step, name, age, schoolStatus, usageType, callInterest]);
+  }, [step, name, email, age, schoolStatus, usageType, callInterest]);
 
   return (
     <div className="h-screen w-full flex flex-col items-center justify-center bg-black relative">
