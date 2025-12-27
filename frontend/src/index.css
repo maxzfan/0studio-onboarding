@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'InputMono';
+  src: url('/InputMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-ink: #1E1E1E;
   --color-mute: #6B7280;
@@ -38,7 +46,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'InputMono', monospace;
   background: linear-gradient(180deg, #F8F9FF 0%, #F3F2FF 100%);
   color: #1E1E1E;
   -webkit-font-smoothing: antialiased;

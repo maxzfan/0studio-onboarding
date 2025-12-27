@@ -5,17 +5,15 @@ export default function Creator() {
     <div className="min-h-screen w-full bg-black flex flex-col items-center justify-center relative overflow-hidden">
       {/* Header */}
       <div className="absolute top-10 left-1/2 transform -translate-x-1/2 z-30 flex flex-col items-center">
-        <a href="/">
-          <h1 
-            className="text-white text-3xl font-light tracking-tight cursor-pointer hover:opacity-80 transition-opacity" 
-            style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}
-          >
-            0studio
-          </h1>
-        </a>
+        <h1 
+          className="text-white text-3xl font-light tracking-tight" 
+          style={{ fontFamily: 'InputMono', fontWeight: 400 }}
+        >
+          0studio
+        </h1>
         <p 
           className="text-white text-sm font-light tracking-wide mt-2 opacity-70" 
-          style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}
+          style={{ fontFamily: 'InputMono', fontWeight: 400 }}
         >
           for creators, by creators
         </p>
@@ -35,8 +33,8 @@ export default function Creator() {
       {/* waitlist link */}
       <a 
         href="/apply"
-        className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-30 text-white text-lg font-light tracking-wide hover:opacity-70 transition-opacity"
-        style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}
+        className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-30 text-white text-sm font-light tracking-wide hover:opacity-70 transition-opacity"
+        style={{ fontFamily: 'InputMono', fontWeight: 400 }}
       >
         join the waitlist
       </a>

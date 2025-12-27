@@ -4,6 +4,7 @@ import { renderCanvas } from '../components/ui/canvas'
 export default function Apply() {
   const [step, setStep] = useState(0);
   const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [age, setAge] = useState('');
   const [schoolStatus, setSchoolStatus] = useState('');
   const [usageType, setUsageType] = useState([]);
@@ -28,27 +29,34 @@ export default function Apply() {
         setStep(2);
       }
     } else if (step === 2) {
-      if (!age.trim()) {
-        setErrors({ age: true });
+      if (!email.trim() || !email.includes('@')) {
+        setErrors({ email: true });
       } else {
         setErrors({});
         setStep(3);
       }
     } else if (step === 3) {
-      if (!schoolStatus) {
-        setErrors({ schoolStatus: true });
+      if (!age.trim()) {
+        setErrors({ age: true });
       } else {
         setErrors({});
         setStep(4);
       }
     } else if (step === 4) {
-      if (usageType.length === 0) {
-        setErrors({ usageType: true });
+      if (!schoolStatus) {
+        setErrors({ schoolStatus: true });
       } else {
         setErrors({});
         setStep(5);
       }
     } else if (step === 5) {
+      if (usageType.length === 0) {
+        setErrors({ usageType: true });
+      } else {
+        setErrors({});
+        setStep(6);
+      }
+    } else if (step === 6) {
       if (!callInterest) {
         setErrors({ callInterest: true });
       } else {
@@ -57,7 +65,7 @@ export default function Apply() {
           // Submit the form data
           submitApplication();
         } else {
-          setStep(6);
+          setStep(7);
         }
       }
     }
@@ -70,6 +78,7 @@ export default function Apply() {
     try {
       const formData = {
         name,
+        email,
         age,
         schoolStatus,
         usageType,
@@ -138,15 +147,27 @@ export default function Apply() {
       <div className="flex flex-col items-center gap-12 z-10">
         {step === 0 && (
           <>
-            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>
-              we're excited for you to try out 0studio!
-            </h1>
+            <div className="flex flex-col items-center gap-4">
+              <h1 className="text-white text-2xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
+                we're excited for you to try out 0studio!
+              </h1>
+              <p className="text-white/70 text-sm font-light tracking-wide text-center" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
+                questions? reach out to{' '}
+                <a 
+                  href="mailto:founders@0studio.xyz"
+                  className="text-white hover:opacity-70 transition-opacity underline"
+                  style={{ fontFamily: 'InputMono', fontWeight: 400 }}
+                >
+                  founders@0studio.xyz
+                </a>
+              </p>
+            </div>
             
             <div className="min-h-[60px] flex items-start justify-center pt-0">
               <button 
                 onClick={handleNext}
                 className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}
+                style={{ fontFamily: 'InputMono', fontWeight: 400 }}
               >
                 &gt;
               </button>
@@ -156,7 +177,7 @@ export default function Apply() {
 
         {step === 1 && (
           <>
-            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>
+            <h1 className="text-white text-2xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
               what is your name?
             </h1>
             
@@ -165,13 +186,13 @@ export default function Apply() {
                 <button 
                   onClick={handleBack}
                   className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                  style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'InputMono', fontWeight: 400 }}
                 >
                   &lt;
                 </button>
                 
                 <div className="flex items-center gap-2">
-                  <span className="text-white text-xl font-light" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>[</span>
+                  <span className="text-white text-xl font-light" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>[</span>
                   <input
                     type="text"
                     value={name}
@@ -180,17 +201,17 @@ export default function Apply() {
                       setErrors({ ...errors, name: false });
                     }}
                     className="bg-transparent border-none text-white text-xl font-light tracking-wide text-center focus:outline-none min-w-[400px]"
-                    style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}
+                    style={{ fontFamily: 'InputMono', fontWeight: 400 }}
                     placeholder="your name"
                     autoFocus
                   />
-                  <span className="text-white text-xl font-light" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>]</span>
+                  <span className="text-white text-xl font-light" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>]</span>
                 </div>
                 
                 <button 
                   onClick={handleNext}
                   className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                  style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'InputMono', fontWeight: 400 }}
                 >
                   &gt;
                 </button>
@@ -198,7 +219,7 @@ export default function Apply() {
               
               <div className="h-6 mt-2">
                 {errors.name && (
-                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>
+                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
                     please enter your name
                   </p>
                 )}
@@ -209,8 +230,8 @@ export default function Apply() {
 
         {step === 2 && (
           <>
-            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>
-              what is your age?
+            <h1 className="text-white text-2xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
+              what is your email?
             </h1>
             
             <div className="flex flex-col items-center min-h-[60px] justify-start">
@@ -218,41 +239,41 @@ export default function Apply() {
                 <button 
                   onClick={handleBack}
                   className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                  style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'InputMono', fontWeight: 400 }}
                 >
                   &lt;
                 </button>
                 
                 <div className="flex items-center gap-2">
-                  <span className="text-white text-xl font-light" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>[</span>
+                  <span className="text-white text-xl font-light" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>[</span>
                   <input
-                    type="text"
-                    value={age}
+                    type="email"
+                    value={email}
                     onChange={(e) => {
-                      setAge(e.target.value);
-                      setErrors({ ...errors, age: false });
+                      setEmail(e.target.value);
+                      setErrors({ ...errors, email: false });
                     }}
                     className="bg-transparent border-none text-white text-xl font-light tracking-wide text-center focus:outline-none min-w-[400px]"
-                    style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}
-                    placeholder="your age"
+                    style={{ fontFamily: 'InputMono', fontWeight: 400 }}
+                    placeholder="your email"
                     autoFocus
                   />
-                  <span className="text-white text-xl font-light" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>]</span>
+                  <span className="text-white text-xl font-light" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>]</span>
                 </div>
                 
                 <button 
                   onClick={handleNext}
                   className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                  style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'InputMono', fontWeight: 400 }}
                 >
                   &gt;
                 </button>
               </div>
               
               <div className="h-6 mt-2">
-                {errors.age && (
-                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>
-                    please enter your age
+                {errors.email && (
+                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
+                    please enter a valid email address
                   </p>
                 )}
               </div>
@@ -262,7 +283,60 @@ export default function Apply() {
 
         {step === 3 && (
           <>
-            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>
+            <h1 className="text-white text-2xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
+              what is your age?
+            </h1>
+            
+            <div className="flex flex-col items-center min-h-[60px] justify-start">
+              <div className="flex items-center gap-4">
+                <button 
+                  onClick={handleBack}
+                  className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
+                  style={{ fontFamily: 'InputMono', fontWeight: 400 }}
+                >
+                  &lt;
+                </button>
+                
+                <div className="flex items-center gap-2">
+                  <span className="text-white text-xl font-light" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>[</span>
+                  <input
+                    type="text"
+                    value={age}
+                    onChange={(e) => {
+                      setAge(e.target.value);
+                      setErrors({ ...errors, age: false });
+                    }}
+                    className="bg-transparent border-none text-white text-xl font-light tracking-wide text-center focus:outline-none min-w-[400px]"
+                    style={{ fontFamily: 'InputMono', fontWeight: 400 }}
+                    placeholder="your age"
+                    autoFocus
+                  />
+                  <span className="text-white text-xl font-light" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>]</span>
+                </div>
+                
+                <button 
+                  onClick={handleNext}
+                  className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
+                  style={{ fontFamily: 'InputMono', fontWeight: 400 }}
+                >
+                  &gt;
+                </button>
+              </div>
+              
+              <div className="h-6 mt-2">
+                {errors.age && (
+                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
+                    please enter your age
+                  </p>
+                )}
+              </div>
+            </div>
+          </>
+        )}
+
+        {step === 4 && (
+          <>
+            <h1 className="text-white text-2xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
               what is your school status?
             </h1>
             
@@ -271,7 +345,7 @@ export default function Apply() {
                 <button 
                   onClick={handleBack}
                   className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                  style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'InputMono', fontWeight: 400 }}
                 >
                   &lt;
                 </button>
@@ -298,7 +372,7 @@ export default function Apply() {
                           <div className="absolute left-1 top-1 w-3 h-3 bg-black rounded-full pointer-events-none"></div>
                         )}
                       </div>
-                      <span className="text-white text-lg font-light tracking-wide group-hover:opacity-70 transition-opacity" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>
+                      <span className="text-white text-lg font-light tracking-wide group-hover:opacity-70 transition-opacity" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
                         {option}
                       </span>
                     </label>
@@ -308,7 +382,7 @@ export default function Apply() {
                 <button 
                   onClick={handleNext}
                   className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                  style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'InputMono', fontWeight: 400 }}
                 >
                   &gt;
                 </button>
@@ -316,7 +390,7 @@ export default function Apply() {
               
               <div className="h-6 mt-2">
                 {errors.schoolStatus && (
-                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>
+                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
                     please select your school status
                   </p>
                 )}
@@ -325,9 +399,9 @@ export default function Apply() {
           </>
         )}
 
-        {step === 4 && (
+        {step === 5 && (
           <>
-            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>
+            <h1 className="text-white text-2xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
               for what do you plan to use 0studio?
             </h1>
             
@@ -336,7 +410,7 @@ export default function Apply() {
                 <button 
                   onClick={handleBack}
                   className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                  style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'InputMono', fontWeight: 400 }}
                 >
                   &lt;
                 </button>
@@ -368,7 +442,7 @@ export default function Apply() {
                           </svg>
                         )}
                       </div>
-                      <span className="text-white text-lg font-light tracking-wide group-hover:opacity-70 transition-opacity" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>
+                      <span className="text-white text-lg font-light tracking-wide group-hover:opacity-70 transition-opacity" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
                         {option}
                       </span>
                     </label>
@@ -378,7 +452,7 @@ export default function Apply() {
                 <button 
                   onClick={handleNext}
                   className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                  style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'InputMono', fontWeight: 400 }}
                 >
                   &gt;
                 </button>
@@ -386,7 +460,7 @@ export default function Apply() {
               
               <div className="h-6 mt-2">
                 {errors.usageType && (
-                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>
+                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
                     please select at least one option
                   </p>
                 )}
@@ -395,9 +469,9 @@ export default function Apply() {
           </>
         )}
 
-        {step === 5 && (
+        {step === 6 && (
           <>
-            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>
+            <h1 className="text-white text-2xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
               would you be down to setup a 15 minute call with us?
             </h1>
             
@@ -406,7 +480,7 @@ export default function Apply() {
                 <button 
                   onClick={handleBack}
                   className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                  style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'InputMono', fontWeight: 400 }}
                 >
                   &lt;
                 </button>
@@ -433,7 +507,7 @@ export default function Apply() {
                           <div className="absolute left-1 top-1 w-3 h-3 bg-black rounded-full pointer-events-none"></div>
                         )}
                       </div>
-                      <span className="text-white text-lg font-light tracking-wide group-hover:opacity-70 transition-opacity" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>
+                      <span className="text-white text-lg font-light tracking-wide group-hover:opacity-70 transition-opacity" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
                         {option}
                       </span>
                     </label>
@@ -444,7 +518,7 @@ export default function Apply() {
                   onClick={handleNext}
                   disabled={isSubmitting}
                   className="text-white text-3xl font-light tracking-wide hover:opacity-70 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
-                  style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'InputMono', fontWeight: 400 }}
                 >
                   {isSubmitting ? '...' : '>'}
                 </button>
@@ -452,17 +526,17 @@ export default function Apply() {
               
               <div className="h-6 mt-2">
                 {errors.callInterest && (
-                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>
+                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
                     please select an option
                   </p>
                 )}
                 {submitError && (
-                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>
+                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
                     error submitting application. please try again.
                   </p>
                 )}
                 {isSubmitting && (
-                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>
+                  <p className="text-white/40 text-sm font-light tracking-wide" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
                     submitting your application...
                   </p>
                 )}
@@ -471,21 +545,21 @@ export default function Apply() {
           </>
         )}
 
-        {step === 6 && (
+        {step === 7 && (
           <>
-            <h1 className="text-white text-3xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>
+            <h1 className="text-white text-2xl font-light tracking-tight text-center max-w-3xl" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
               thanks for applying!
             </h1>
             
             <div className="flex flex-col items-center gap-6">
-              <p className="text-white/80 text-lg font-light tracking-wide text-center max-w-2xl" style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}>
+              <p className="text-white/80 text-lg font-light tracking-wide text-center max-w-2xl" style={{ fontFamily: 'InputMono', fontWeight: 400 }}>
                 we'll be in touch soon!
               </p>
               
               <a 
-                href="/creator"
+                href="/"
                 className="text-white text-xl font-light tracking-wide hover:opacity-70 transition-opacity"
-                style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 300 }}
+                style={{ fontFamily: 'InputMono', fontWeight: 400 }}
               >
                 go back
               </a>
