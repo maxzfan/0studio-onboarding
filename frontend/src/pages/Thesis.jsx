@@ -24,7 +24,7 @@ export default function Thesis() {
           </p>
 
           <p>
-            architecture is an inherently iterative process, yet the industry still works by passing files around. 
+            3D modeling is an inherently iterative process, yet the industry still works by passing files around. 
             every design decision creates copies. 
             manual saves, email with huge attachments, broken downstream work. 
             a new idea should be your greatest asset, but instead it often feels like a burden.
