@@ -7,7 +7,7 @@ export default function Thesis() {
           className="text-white text-3xl font-light tracking-tight mb-4" 
           style={{ fontFamily: 'InputMono', fontWeight: 400 }}
         >
-          0studio
+          
         </h1>
       </div>
       
