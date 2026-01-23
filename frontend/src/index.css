@@ -11,10 +11,10 @@
 @theme {
   --color-ink: #1E1E1E;
   --color-mute: #6B7280;
-  --color-brand-start: #6675FF;
-  --color-brand-end: #9A6BFF;
+  --color-brand-start: #34d399;
+  --color-brand-end: #22d3ee;
   
-  --shadow-soft: 0 8px 32px rgba(102, 117, 255, 0.15);
+  --shadow-soft: 0 8px 32px rgba(52, 211, 153, 0.15);
   
   --radius-xl2: 1.25rem;
   
@@ -30,6 +30,12 @@
   --sky-800: #075985;
   --sky-900: #0c4a6e;
   --sky-950: #082f49;
+  
+  /* Emerald/Cyan theme */
+  --emerald-400: #34d399;
+  --emerald-500: #10b981;
+  --cyan-400: #22d3ee;
+  --cyan-500: #06b6d4;
 }
 
 html, body, #root { 
@@ -42,44 +48,37 @@ html, body, #root {
 
 html {
   background: #000000;
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   font-family: 'InputMono', monospace;
-  background: linear-gradient(180deg, #F8F9FF 0%, #F3F2FF 100%);
-  color: #1E1E1E;
+  background: #000000;
+  color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overscroll-behavior: none;
   overscroll-behavior-x: none;
   overscroll-behavior-y: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #6675FF 0%, #9A6BFF 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .btn-primary {
-  background: linear-gradient(90deg, #6675FF 0%, #9A6BFF 100%);
-  color: white;
-  border-radius: 0.875rem;
-  padding: 0.9rem 1.25rem;
-  font-weight: 600;
-  box-shadow: 0 10px 24px rgba(102,117,255,0.28);
-  transition: transform .12s ease, box-shadow .12s ease;
+  background: white;
+  color: black;
+  border-radius: 0;
+  padding: 0.75rem 2rem;
+  font-weight: 400;
+  font-family: 'InputMono', monospace;
+  transition: background .15s ease, opacity .15s ease;
 }
 
 .btn-primary:hover { 
-  transform: translateY(-1px); 
-  box-shadow: 0 14px 32px rgba(102,117,255,0.35); 
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .badge {
@@ -87,20 +86,53 @@ body {
   align-items: center; 
   justify-content: center;
   gap: 0.5rem;
-  font-size: 0.9rem; 
-  color: #111827;
-  background: white;
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  font-weight: 500;
-  border: 1px solid #E5E7EB;
+  font-size: 0.875rem; 
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 400;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.2s ease;
 }
 
 .badge:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Animation utilities */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+/* Staggered delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(52, 211, 153, 0.3);
+  color: white;
 }
 
 /* Custom slider styles */

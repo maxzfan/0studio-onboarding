@@ -2,6 +2,7 @@
   "name": "cretor-landing-page",
   "private": true,
   "version": "1.0.0",
+  "packageManager": "pnpm@9.15.4",
   "description": "A modern landing page for Cretor - AI-powered content creation platform",
   "type": "module",
   "scripts": {

@@ -8,6 +8,10 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+
+# Lock files (using pnpm only)
+package-lock.json
+yarn.lock
 dist
 dist-ssr
 *.local

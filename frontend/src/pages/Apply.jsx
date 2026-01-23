@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { renderCanvas } from '../components/ui/canvas'
+import { useEffect, useState, useCallback } from 'react'
 import emailjs from '@emailjs/browser'
 
 // EmailJS Configuration - Replace these with your actual values from emailjs.com
@@ -131,16 +130,17 @@ export default function Apply() {
     }
   };
 
-  const handleKeyPress = (e) => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handleKeyPress = useCallback((e) => {
     if (e.key === 'Enter') {
       handleNext();
     }
-  };
+  }, [step, name, email, age, schoolStatus, usageType, callInterest]);
 
   useEffect(() => {
     window.addEventListener('keypress', handleKeyPress);
     return () => window.removeEventListener('keypress', handleKeyPress);
-  }, [step, name, email, age, schoolStatus, usageType, callInterest]);
+  }, [handleKeyPress]);
 
   return (
     <div className="h-screen w-full flex flex-col items-center justify-center bg-black relative">

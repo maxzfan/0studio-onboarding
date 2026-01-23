@@ -59,7 +59,9 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }
     `.trim();
 
     // Send email using Resend API
+    // eslint-disable-next-line no-undef
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
+    // eslint-disable-next-line no-undef
     const IS_LOCAL = process.env.NODE_ENV !== 'production';
     
     if (!RESEND_API_KEY) {

@@ -28,7 +28,7 @@ n.prototype = {
   },
 };
 
-// @ts-ignore
+// eslint-disable-next-line react-refresh/only-export-components
 function Line(e) {
   // @ts-ignore
   this.init(e || {});
@@ -202,6 +202,7 @@ var ctx,
     dampening: 0.025,
     tension: 0.99,
   };
+// eslint-disable-next-line react-refresh/only-export-components
 function Node() {
   this.x = 0;
   this.y = 0;
