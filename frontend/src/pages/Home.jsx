@@ -212,6 +212,12 @@ export default function Home() {
             
             <div className="flex items-center gap-4">
               <Link 
+                to="/download"
+                className="px-5 py-2 border border-white/30 text-white text-sm hover:bg-white hover:text-black transition-all"
+              >
+                download
+              </Link>
+              <Link 
                 to="/install"
                 className="px-5 py-2 border border-white/30 text-white text-sm hover:bg-white hover:text-black transition-all"
               >
@@ -263,7 +269,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6"
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 flex-wrap"
           >
             <Link 
               to="/install"
@@ -272,11 +278,17 @@ export default function Home() {
               get started
             </Link>
             <Link 
-              to="/tutorial"
+              to="/download"
+              className="px-8 py-3 border border-white/30 text-white font-light hover:bg-white/5 transition-all text-sm tracking-wide"
+            >
+              download
+            </Link>
+            <a 
+              href="#features"
               className="px-8 py-3 border border-white/30 text-white font-light hover:bg-white/5 transition-all text-sm tracking-wide"
             >
               learn more
-            </Link>
+            </a>
           </motion.div>
         </div>
         
@@ -623,6 +635,7 @@ export default function Home() {
                 <li><a href="#workflow" className="hover:text-white transition-colors">how it works</a></li>
                 <li><a href="#testimonials" className="hover:text-white transition-colors">testimonials</a></li>
                 <li><a href="#faq" className="hover:text-white transition-colors">faq</a></li>
+                <li><Link to="/download" className="hover:text-white transition-colors">download</Link></li>
               </ul>
             </div>
             

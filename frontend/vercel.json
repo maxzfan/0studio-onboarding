@@ -3,6 +3,21 @@
   "outputDirectory": "dist",
   "installCommand": "pnpm install",
   "devCommand": "vite --port $PORT",
+  "headers": [
+    {
+      "source": "/(.*\\.dmg)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/x-apple-diskimage"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "attachment"
+        }
+      ]
+    }
+  ],
   "rewrites": [
     { "source": "/api/:path*", "destination": "/api/:path*" },
     { "source": "/(.*)", "destination": "/index.html" }
