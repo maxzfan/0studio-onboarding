@@ -110,6 +110,14 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault()
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   const features = [
     {
       icon: <svg className="w-5 h-5 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
@@ -195,10 +203,10 @@ export default function Home() {
             </Link>
             
             <div className="hidden md:flex items-center gap-8">
-              <a href="#features" className="text-white/50 hover:text-white transition-colors text-sm">[features]</a>
-              <a href="#workflow" className="text-white/50 hover:text-white transition-colors text-sm">[how it works]</a>
-              <a href="#testimonials" className="text-white/50 hover:text-white transition-colors text-sm">[testimonials]</a>
-              <a href="#faq" className="text-white/50 hover:text-white transition-colors text-sm">[faq]</a>
+              <a href="#features" onClick={(e) => scrollToSection(e, 'features')} className="text-white/50 hover:text-white transition-colors text-sm cursor-pointer">[features]</a>
+              <a href="#workflow" onClick={(e) => scrollToSection(e, 'workflow')} className="text-white/50 hover:text-white transition-colors text-sm cursor-pointer">[how it works]</a>
+              <a href="#testimonials" onClick={(e) => scrollToSection(e, 'testimonials')} className="text-white/50 hover:text-white transition-colors text-sm cursor-pointer">[testimonials]</a>
+              <a href="#faq" onClick={(e) => scrollToSection(e, 'faq')} className="text-white/50 hover:text-white transition-colors text-sm cursor-pointer">[faq]</a>
             </div>
             
             <div className="flex items-center gap-4">
