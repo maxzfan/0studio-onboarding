@@ -40,27 +40,30 @@
 
 html, body, #root { 
   height: 100%; 
+  background: #000000;
   overscroll-behavior: none;
   overscroll-behavior-x: none;
   overscroll-behavior-y: none;
-  -webkit-overflow-scrolling: touch;
 }
 
 html {
-  background: #000000;
+  overflow: hidden;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  overflow: auto;
   font-family: 'InputMono', monospace;
-  background: #000000;
   color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overscroll-behavior: none;
-  overscroll-behavior-x: none;
-  overscroll-behavior-y: none;
+  -webkit-overflow-scrolling: touch;
+  /* Disable text selection */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .gradient-text {
@@ -123,11 +126,6 @@ body {
 .delay-300 { animation-delay: 0.3s; }
 .delay-400 { animation-delay: 0.4s; }
 .delay-500 { animation-delay: 0.5s; }
-
-/* Smooth scrolling for anchor links */
-html {
-  scroll-behavior: smooth;
-}
 
 /* Selection color */
 ::selection {

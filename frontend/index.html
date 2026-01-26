@@ -1,9 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="background:#000000;">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/136784.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <title>0studio</title>
     
     <!-- Geist Font -->
@@ -28,8 +30,8 @@
     <meta property="twitter:title" content="0studio" />
     <meta property="twitter:description" content="Keep all your existing tools in perfect sync. Track your design history. Collaborate in real-time. Branch off & backtrack from your ideas." />
   </head>
-  <body>
-    <div id="root"></div>
+  <body onselectstart="return false" ondragstart="return false" style="background:#000000;margin:0;">
+    <div id="root" style="background:#000000;"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
