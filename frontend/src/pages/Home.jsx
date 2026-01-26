@@ -211,7 +211,7 @@ export default function Home() {
             
             <div className="flex items-center gap-4">
               <Link 
-                to="/apply"
+                to="/install"
                 className="px-5 py-2 border border-white/30 text-white text-sm hover:bg-white hover:text-black transition-all"
               >
                 request demo
@@ -265,7 +265,7 @@ export default function Home() {
             className="flex flex-col sm:flex-row items-center justify-center gap-6"
           >
             <Link 
-              to="/apply"
+              to="/install"
               className="px-8 py-3 bg-white text-black font-light hover:bg-white/90 transition-all text-sm tracking-wide"
             >
               request a demo
@@ -478,7 +478,7 @@ export default function Home() {
             className="text-center mt-16"
           >
             <Link 
-              to="/apply"
+              to="/install"
               className="inline-flex items-center gap-3 px-8 py-3 bg-white text-black font-light hover:bg-white/90 transition-all text-sm"
             >
               get started
@@ -579,7 +579,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link 
-                to="/apply"
+                to="/install"
                 className="px-8 py-3 bg-white text-black font-light hover:bg-white/90 transition-all text-sm"
               >
                 request a demo
@@ -629,7 +629,7 @@ export default function Home() {
               <h4 className="text-white/60 text-sm mb-4">[company]</h4>
               <ul className="space-y-2 text-white/40 text-sm">
                 <li><Link to="/thesis" className="hover:text-white transition-colors">about us</Link></li>
-                <li><Link to="/apply" className="hover:text-white transition-colors">request demo</Link></li>
+                <li><Link to="/install" className="hover:text-white transition-colors">request demo</Link></li>
                 <li><a href="mailto:founders@0studio.xyz" className="hover:text-white transition-colors">contact</a></li>
               </ul>
             </div>
