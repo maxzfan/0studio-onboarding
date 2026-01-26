@@ -214,7 +214,7 @@ export default function Home() {
                 to="/install"
                 className="px-5 py-2 border border-white/30 text-white text-sm hover:bg-white hover:text-black transition-all"
               >
-                request demo
+                get started
               </Link>
             </div>
           </div>
@@ -268,7 +268,7 @@ export default function Home() {
               to="/install"
               className="px-8 py-3 bg-white text-black font-light hover:bg-white/90 transition-all text-sm tracking-wide"
             >
-              request a demo
+              get started
             </Link>
             <a 
               href="#features"
@@ -575,14 +575,14 @@ export default function Home() {
             </h2>
             <p className="text-base text-white/50 mb-12 max-w-xl mx-auto">
               join design teams who've already transformed their workflow. 
-              request a demo and see 0studio in action.
+              get started and see 0studio in action.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link 
                 to="/install"
                 className="px-8 py-3 bg-white text-black font-light hover:bg-white/90 transition-all text-sm"
               >
-                request a demo
+                get started
               </Link>
               <a 
                 href="mailto:founders@0studio.xyz"
@@ -629,7 +629,7 @@ export default function Home() {
               <h4 className="text-white/60 text-sm mb-4">[company]</h4>
               <ul className="space-y-2 text-white/40 text-sm">
                 <li><Link to="/thesis" className="hover:text-white transition-colors">about us</Link></li>
-                <li><Link to="/install" className="hover:text-white transition-colors">request demo</Link></li>
+                <li><Link to="/install" className="hover:text-white transition-colors">get started</Link></li>
                 <li><a href="mailto:founders@0studio.xyz" className="hover:text-white transition-colors">contact</a></li>
               </ul>
             </div>
