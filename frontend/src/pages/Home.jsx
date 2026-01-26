@@ -132,12 +132,12 @@ export default function Home() {
     {
       icon: <svg className="w-5 h-5 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" /></svg>,
       title: "single source of truth",
-      description: "no more _final_final_v7.blend files. one project, one location, always in sync."
+      description: "no more _final_final_v7.3dm files. one project, one location, always in sync."
     },
     {
       icon: <svg className="w-5 h-5 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>,
       title: "tool agnostic",
-      description: "works with your existing software stack. blender, rhino, sketchup — we sync them all."
+      description: "works alongside your existing software stack. no compromises on your end."
     }
   ]
 
@@ -172,7 +172,7 @@ export default function Home() {
   const faqs = [
     {
       question: "what 3D software does 0studio support?",
-      answer: "we currently support blender, rhino, sketchup, and revit, with more coming soon. our plugin architecture makes it easy to add new tools."
+      answer: "we currently support Rhino 7 and 8, with more software integration in the works."
     },
     {
       question: "how is this different from dropbox or google drive?",
@@ -188,7 +188,7 @@ export default function Home() {
     },
     {
       question: "is my data secure?",
-      answer: "yes. we use end-to-end encryption, SOC 2 compliant infrastructure, and your files are never shared without explicit permission."
+      answer: "yes. we use end-to-end encryption, and your files are never shared without explicit permission."
     }
   ]
 
@@ -302,7 +302,7 @@ export default function Home() {
               className="text-center"
             >
               <div className="text-4xl font-light text-white mb-2">
-                <AnimatedCounter end={100} suffix="+" />
+                <AnimatedCounter end={20} suffix="+" />
               </div>
               <p className="text-white/40 text-sm">design teams</p>
             </motion.div>
@@ -314,7 +314,7 @@ export default function Home() {
               className="text-center"
             >
               <div className="text-4xl font-light text-white mb-2">
-                <AnimatedCounter end={50} suffix="k+" />
+                <AnimatedCounter end={300} suffix="+" />
               </div>
               <p className="text-white/40 text-sm">files synced</p>
             </motion.div>
@@ -338,7 +338,7 @@ export default function Home() {
               className="text-center"
             >
               <div className="text-4xl font-light text-white mb-2">
-                <AnimatedCounter end={4} suffix="+" />
+                <AnimatedCounter end={2} suffix="+" />
               </div>
               <p className="text-white/40 text-sm">integrations</p>
             </motion.div>
