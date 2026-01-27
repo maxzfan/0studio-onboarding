@@ -39,7 +39,7 @@ export default function Thesis() {
           </p>
           
           <p>
-            if your project files have names like _final_final_v7 or you're running out of email attachment storage, <a href="/apply" className="underline hover:opacity-70 transition-opacity">give 0studio a try</a>.
+            if your project files have names like _final_final_v7 or you're running out of email attachment storage, give 0studio a try.
           </p>
 
           <p>
