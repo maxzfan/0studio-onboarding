@@ -1,6 +1,31 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
+// Reusable Version Update component
+const VersionUpdate = ({ version, features, delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay }}
+    className="mb-6 last:mb-0"
+  >
+    <h3 
+      className="text-white text-base font-light mb-3 flex items-center gap-3"
+      style={{ fontFamily: 'InputMono, monospace' }}
+    >
+      <span className="px-2 py-1 border border-white/30 text-xs">{version}</span>
+    </h3>
+    <ul className="space-y-2 text-white/50 text-sm">
+      {features.map((feature, index) => (
+        <li key={index} className="flex items-start gap-3">
+          <span className="text-white/60">✓</span>
+          {feature}
+        </li>
+      ))}
+    </ul>
+  </motion.div>
+)
+
 export default function Tutorial() {
   return (
     <div className="min-h-screen bg-black text-white" style={{ fontFamily: 'InputMono, monospace' }}>
@@ -80,7 +105,18 @@ export default function Tutorial() {
               new features and updates will be described here as we continue to build 0studio.
               stay tuned for exciting improvements to your workflow.
             </p>
-            <div className="border-t border-white/10 pt-6">
+            
+            <VersionUpdate
+              version="v1.0.0"
+              features={[
+                "local branching history",
+                "gallery view",
+                "filter & search commit messages"
+              ]}
+              delay={0.5}
+            />
+
+            <div className="border-t border-white/10 pt-6 mt-6">
               <p className="text-white/50 text-sm leading-relaxed">
                 have questions or feature requests? reach out to us at{' '}
                 <a 
