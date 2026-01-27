@@ -190,7 +190,7 @@ export default function Install() {
             <InstallStep
               number="02"
               title="install Homebrew (if you haven't already)"
-              description="Homebrew makes installing software on your Mac super easy. copy and paste this command, then press Enter:"
+              description={<><a href="https://brew.sh" target="_blank" rel="noopener noreferrer" className="text-white/70 underline hover:text-white transition-colors">Homebrew</a> makes installing software on your Mac super easy. copy and paste this command, then press Enter:</>}
               command='/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
               delay={0.4}
             />
@@ -261,22 +261,21 @@ export default function Install() {
               what's next?
             </h2>
             <p className="text-white/50 mb-8 max-w-lg mx-auto">
-              you're ready to level up your workflow with 0studio!
-              here's a quick video guide to get you started.
+              watch a quick tutorial on 0studio to start leveling up your workflow.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link 
+                to="/tutorial"
+                className="px-8 py-3 bg-white text-black font-light hover:bg-white/90 transition-all text-sm"
+              >
+                watch tutorial
+              </Link>
               <Link 
                 to="/"
                 className="px-8 py-3 border border-white/30 text-white font-light hover:bg-white/5 transition-all text-sm"
               >
                 back to home
               </Link>
-              <a 
-                href="mailto:founders@0studio.xyz"
-                className="px-8 py-3 bg-white text-black font-light hover:bg-white/90 transition-all text-sm"
-              >
-                contact us
-              </a>
             </div>
           </motion.div>
         </div>

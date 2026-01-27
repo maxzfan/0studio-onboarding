@@ -270,12 +270,12 @@ export default function Home() {
             >
               get started
             </Link>
-            <a 
-              href="#features"
+            <Link 
+              to="/tutorial"
               className="px-8 py-3 border border-white/30 text-white font-light hover:bg-white/5 transition-all text-sm tracking-wide"
             >
               learn more
-            </a>
+            </Link>
           </motion.div>
         </div>
         
