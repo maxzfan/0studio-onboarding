@@ -172,7 +172,7 @@ export default function Home() {
   const faqs = [
     {
       question: "what 3D software does 0studio support?",
-      answer: "we currently support Rhino 7 and 8, with more software integration in the works."
+      answer: "we currently support Rhino 7 and 8 on macOS, with more software integration in the works."
     },
     {
       question: "how is this different from dropbox or google drive?",

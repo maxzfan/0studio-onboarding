@@ -69,7 +69,6 @@ export default function Tutorial() {
             
             <p className="text-base text-white/50 max-w-xl mx-auto leading-relaxed">
               watch the demo below to see 0studio in action.
-              learn how to supercharge your design workflow.
             </p>
           </motion.div>
 

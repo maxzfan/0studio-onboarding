@@ -140,8 +140,7 @@ export default function Install() {
             </h1>
             
             <p className="text-base text-white/50 max-w-xl mx-auto leading-relaxed">
-              follow these simple steps to install 0studio on your mac. 
-              don't worry if you're new to this — we'll guide you through each step.
+              follow these simple steps to install 0studio.
             </p>
           </motion.div>
 
