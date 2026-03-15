@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { releases } from '../data/releases'
 
 // Reusable Version Update component
 const VersionUpdate = ({ version, features, delay = 0 }) => (
@@ -105,24 +106,14 @@ export default function Tutorial() {
               stay tuned for exciting improvements to your workflow.
             </p>
             
-            <VersionUpdate
-              version="v1.0.1"
-              features={[
-                "user login & data sync",
-                "push & pull from cloud"
-              ]}
-              delay={0.5}
-            />
-
-            <VersionUpdate
-              version="v1.0.0"
-              features={[
-                "local branching history",
-                "gallery view",
-                "filter & search commit messages"
-              ]}
-              delay={0.6}
-            />
+            {releases.map((release, index) => (
+              <VersionUpdate
+                key={release.version}
+                version={release.version}
+                features={release.features}
+                delay={0.5 + index * 0.1}
+              />
+            ))}
 
             <div className="border-t border-white/10 pt-6 mt-6">
               <p className="text-white/50 text-sm leading-relaxed">

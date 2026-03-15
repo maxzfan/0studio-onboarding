@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { getLatestFeature } from '../data/releases'
 
 // Animated counter component
 const AnimatedCounter = ({ end, suffix = '', duration = 2 }) => {
@@ -231,7 +232,7 @@ export default function Home() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 border border-white/20 mb-12">
               <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>
-              <span className="text-xs text-white/60">now accepting early access applications</span>
+              <span className="text-xs text-white/60">now supporting {getLatestFeature()}</span>
             </div>
           </motion.div>
           
