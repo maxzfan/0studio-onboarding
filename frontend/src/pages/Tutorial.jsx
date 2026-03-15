@@ -106,13 +106,22 @@ export default function Tutorial() {
             </p>
             
             <VersionUpdate
+              version="v1.0.1"
+              features={[
+                "user login & data sync",
+                "push & pull from cloud"
+              ]}
+              delay={0.5}
+            />
+
+            <VersionUpdate
               version="v1.0.0"
               features={[
                 "local branching history",
                 "gallery view",
                 "filter & search commit messages"
               ]}
-              delay={0.5}
+              delay={0.6}
             />
 
             <div className="border-t border-white/10 pt-6 mt-6">
