@@ -1,2 +1,6 @@
 .env.pnpm-store
 .pnpm-store
+
+# Large binaries
+*.mov
+*.mp4
