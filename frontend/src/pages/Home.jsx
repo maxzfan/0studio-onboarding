@@ -723,19 +723,14 @@ export default function Home() {
             viewport={{ once: true }}
             className="w-full border border-white/10 overflow-hidden"
           >
-            <video
-              controls
-              playsInline
+            <iframe
+              src="https://www.youtube.com/embed/DiqAeY2QN4w"
+              title="0studio demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
               className="w-full block"
-              style={{
-                maxHeight: "600px",
-                objectFit: "contain",
-                background: "#000",
-              }}
-            >
-              <source src="/demo_v1.0.0.mov" type="video/quicktime" />
-              <source src="/demo_v1.0.0.mov" type="video/mp4" />
-            </video>
+              style={{ aspectRatio: "16/9", border: "none", background: "#000" }}
+            />
           </motion.div>
         </div>
       </section>
