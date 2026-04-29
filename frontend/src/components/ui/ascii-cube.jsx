@@ -199,7 +199,7 @@ export default function CubeAnimation({
   }, [A, B, C, color, speedA, speedB, speedC, axis, backfaceCulling, incrementSpeed, edges, wireframe]);
 
   return (
-    <pre className="font-mono text-xs whitespace-pre leading-none text-center">
+    <pre className="font-mono whitespace-pre leading-none text-center inline-block m-0">
       {frame}
     </pre>
   );

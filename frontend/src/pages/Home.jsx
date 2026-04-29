@@ -9,17 +9,9 @@ import CubeAnimation from '../components/ui/ascii-cube'
 // or a hand-edited constant bumped on each new application).
 const WAITLIST_COUNT = 30
 
-// TODO: replace with real founders. Photo path goes in /public/.
 const FOUNDERS = [
-  { name: 'TODO founder one', role: 'co-founder', initial: 'X' },
-  { name: 'TODO founder two', role: 'co-founder', initial: 'X' },
-]
-
-// TODO: replace with real beta-studio names (one line each, lowercase to match aesthetic).
-const BETA_STUDIOS = [
-  'studio one (TODO)',
-  'studio two (TODO)',
-  'studio three (TODO)',
+  { name: 'Colin Inkyu Kim', role: 'MIT Architecture + CS', initial: 'C' },
+  { name: 'Max Fan', role: 'Stanford CS', initial: 'M' },
 ]
 
 // Counter that animates only once it enters the viewport, instead of firing on mount.
@@ -371,18 +363,16 @@ export default function Home() {
               </motion.div>
             </div>
 
-            <div className="lg:col-span-5 hidden lg:block">
+            <div className="lg:col-span-5 hidden lg:flex items-center justify-center">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.2, delay: 0.4 }}
-                className="text-white/40"
+                className="text-white/40 [&_pre]:text-[7px] [&_pre]:leading-[7px]"
                 aria-hidden="true"
               >
                 {!reduceMotion && (
-                  <div style={{ fontSize: '6px', lineHeight: 1 }}>
-                    <CubeAnimation axis="xy" speedA={0.02} speedB={0.015} edges={true} wireframe={true} />
-                  </div>
+                  <CubeAnimation axis="xy" speedA={0.02} speedB={0.015} edges={true} wireframe={true} />
                 )}
               </motion.div>
             </div>
@@ -598,13 +588,12 @@ export default function Home() {
               className="bg-black p-8"
             >
               <span className="text-white/40 text-xs tracking-wider mb-6 block">[in private beta]</span>
-              <ul className="space-y-3 text-white/60 text-sm">
-                {BETA_STUDIOS.map((studio) => (
-                  <li key={studio} className="flex items-start gap-3">
-                    <span className="text-white/30">·</span>
-                    {studio}
-                  </li>
-                ))}
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-start gap-3 text-white/70">
+                  <span className="text-white/30">·</span>
+                  MIT School of Architecture & Planning
+                </li>
+                <li className="text-white/30 text-xs italic pl-5">more coming soon</li>
               </ul>
             </motion.div>
 
