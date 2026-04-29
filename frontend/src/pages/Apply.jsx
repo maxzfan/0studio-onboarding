@@ -19,7 +19,12 @@ export default function Apply() {
   const [submitError, setSubmitError] = useState(false);
 
   useEffect(() => {
-    // renderCanvas();
+    const params = new URLSearchParams(window.location.search);
+    const prefilledEmail = params.get('email');
+    if (prefilledEmail) {
+      setEmail(prefilledEmail);
+      setStep(1);
+    }
   }, []);
 
   const handleNext = () => {
