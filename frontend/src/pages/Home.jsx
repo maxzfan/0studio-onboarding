@@ -64,7 +64,7 @@ const FeatureCard = ({ icon, title, description, delay }) => (
     <h3 className="text-white text-base font-light tracking-wide mb-3">{title}</h3>
     <p className="text-white/40 leading-relaxed text-sm">{description}</p>
   </motion.div>
-)
+);
 
 const WorkflowStep = ({ number, title, description, delay }) => (
   <motion.div
@@ -84,7 +84,7 @@ const WorkflowStep = ({ number, title, description, delay }) => (
       <p className="text-white/50 leading-relaxed text-sm">{description}</p>
     </div>
   </motion.div>
-)
+);
 
 const FAQItem = ({ question, answer, isOpen, onClick }) => (
   <div
@@ -99,14 +99,14 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => (
     </div>
     <motion.div
       initial={false}
-      animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+      animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
       transition={{ duration: 0.3 }}
       className="overflow-hidden"
     >
       <p className="text-white/50 pb-6 leading-relaxed text-sm">{answer}</p>
     </motion.div>
   </div>
-)
+);
 
 // Visualization for the file-chaos pain. Crossed-out chaotic filenames collapse
 // into a single `main` branch. Renders as inline SVG-styled text so it stays
@@ -175,19 +175,19 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToSection = (e, sectionId) => {
-    e.preventDefault()
-    const element = document.getElementById(sectionId)
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  }
+  };
 
   const handleHeroSubmit = (e) => {
     e.preventDefault()
@@ -252,9 +252,14 @@ export default function Home() {
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden" style={{ fontFamily: 'InputMono, monospace' }}>
+    <div
+      className="min-h-screen bg-black text-white overflow-x-hidden"
+      style={{ fontFamily: "InputMono, monospace" }}
+    >
       {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black ${isScrolled ? 'border-b border-white/10' : ''}`}>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black ${isScrolled ? "border-b border-white/10" : ""}`}
+      >
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="text-base font-light tracking-tight">
@@ -400,7 +405,9 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <span className="text-white/40 text-xs tracking-wider mb-6 block">[the problem]</span>
+              <span className="text-white/40 text-xs tracking-wider mb-6 block">
+                [the problem]
+              </span>
               <h2 className="text-2xl md:text-3xl font-light mb-6">
                 3D modeling is iterative.
                 <br />
@@ -431,7 +438,9 @@ export default function Home() {
               viewport={{ once: true }}
               className="border border-white/10 p-8"
             >
-              <span className="text-white/40 text-xs tracking-wider mb-6 block">[the solution]</span>
+              <span className="text-white/40 text-xs tracking-wider mb-6 block">
+                [the solution]
+              </span>
               <h2 className="text-2xl md:text-3xl font-light mb-6">
                 0studio keeps everything
                 <br />
@@ -739,12 +748,16 @@ export default function Home() {
               © {new Date().getFullYear()} 0studio. all rights reserved.
             </p>
             <div className="flex items-center gap-6 text-white/30 text-xs">
-              <a href="#" className="hover:text-white transition-colors">[privacy]</a>
-              <a href="#" className="hover:text-white transition-colors">[terms]</a>
+              <a href="#" className="hover:text-white transition-colors">
+                [privacy]
+              </a>
+              <a href="#" className="hover:text-white transition-colors">
+                [terms]
+              </a>
             </div>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }

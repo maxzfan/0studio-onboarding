@@ -4,6 +4,7 @@ import Apply from './pages/Apply'
 import Thesis from './pages/Thesis'
 import Install from './pages/Install'
 import Tutorial from './pages/Tutorial'
+import Download from './pages/Download'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/thesis" element={<Thesis />} />
         <Route path="/install" element={<Install />} />
         <Route path="/tutorial" element={<Tutorial />} />
+        <Route path="/download" element={<Download />} />
       </Routes>
     </Router>
   )

@@ -81,15 +81,14 @@ export default function Tutorial() {
             className="mb-16"
           >
             <div className="border border-white/10 p-4">
-              <video
-                className="w-full aspect-video bg-black"
-                controls
-                playsInline
-              >
-                <source src="/demo_v1.0.0.mov" type="video/quicktime" />
-                <source src="/demo_v1.0.0.mov" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <iframe
+                src="https://www.youtube.com/embed/DiqAeY2QN4w"
+                title="0studio demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full aspect-video"
+                style={{ border: "none", background: "#000" }}
+              />
             </div>
           </motion.div>
 
