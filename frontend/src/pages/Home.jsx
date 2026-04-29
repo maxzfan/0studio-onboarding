@@ -302,9 +302,9 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.1 }}
                 className="text-4xl md:text-6xl font-light tracking-tight mb-6 leading-[1.1]"
               >
-                git for Rhino & Revit.
+                version control
                 <br />
-                <span className="text-white/50">macOS and Windows.</span>
+                <span className="text-white/50">for 3d models.</span>
               </motion.h1>
 
               <motion.p
