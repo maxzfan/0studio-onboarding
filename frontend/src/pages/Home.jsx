@@ -231,7 +231,7 @@ export default function Home() {
   const faqs = [
     {
       question: 'what 3D software does 0studio support?',
-      answer: 'we currently support Rhino 7 and 8 on macOS, with more software integration in the works.'
+      answer: 'we currently support Rhino 7 & 8 and Revit on macOS and Windows. more software integration is in the works.'
     },
     {
       question: 'how is this different from dropbox or google drive?',
@@ -302,9 +302,9 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.1 }}
                 className="text-4xl md:text-6xl font-light tracking-tight mb-6 leading-[1.1]"
               >
-                git for Rhino.
+                git for Rhino & Revit.
                 <br />
-                <span className="text-white/50">on macOS.</span>
+                <span className="text-white/50">macOS and Windows.</span>
               </motion.h1>
 
               <motion.p
@@ -591,7 +591,7 @@ export default function Home() {
               <ul className="space-y-3 text-sm">
                 <li className="flex items-start gap-3 text-white/70">
                   <span className="text-white/30">·</span>
-                  MIT School of Architecture & Planning
+                  MIT SA+P
                 </li>
                 <li className="text-white/30 text-xs italic pl-5">more coming soon</li>
               </ul>
